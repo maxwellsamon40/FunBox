@@ -1,0 +1,53 @@
+.piano-roll {
+  display: flex;
+  height: 100%;
+  gap: 10px;
+  padding: 10px;
+  background: #1e1e1e;
+}
+
+.piano-keys {
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  overflow-y: auto;
+  background: #2d2d2d;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.piano-key {
+  height: 30px;
+  border: 1px solid #444;
+  cursor: pointer;
+  font-size: 10px;
+  border-radius: 3px;
+  transition: background 0.1s;
+}
+
+.piano-key.white {
+  background: #f0f0f0;
+  color: #000;
+}
+
+.piano-key.white:hover {
+  background: #e0e0e0;
+}
+
+.piano-key.black {
+  background: #333;
+  color: #fff;
+}
+
+.piano-key.black:hover {
+  background: #555;
+}
+
+.timeline-grid {
+  flex: 1;
+  background: #2d2d2d;
+  border-radius: 4px;
+  position: relative;
+  overflow: auto;
+}
