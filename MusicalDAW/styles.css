@@ -1,0 +1,290 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    background: #1e1e1e;
+    color: #fff;
+    overflow: hidden;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.app-header {
+    background: #0d1117;
+    border-bottom: 1px solid #30363d;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.app-header h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.controls {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.bpm-control {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    background: #2d2d2d;
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+#bpmInput {
+    width: 60px;
+    padding: 6px;
+    background: #1e1e1e;
+    border: 1px solid #444;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.play-btn, .stop-btn {
+    padding: 10px 20px;
+    background: #238636;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.play-btn:hover {
+    background: #2ea043;
+}
+
+.stop-btn {
+    background: #da3633;
+}
+
+.stop-btn:hover {
+    background: #f85149;
+}
+
+.app-main {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    gap: 10px;
+    padding: 10px;
+}
+
+.piano-container {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+    background: #2d2d2d;
+    border-radius: 8px;
+}
+
+.piano-roll {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+}
+
+.piano-keys {
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    overflow-y: auto;
+    background: #1e1e1e;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.piano-key {
+    height: 30px;
+    border: 1px solid #444;
+    cursor: pointer;
+    font-size: 11px;
+    border-radius: 2px;
+    transition: all 0.1s;
+    font-weight: bold;
+}
+
+.piano-key.white {
+    background: #f0f0f0;
+    color: #000;
+}
+
+.piano-key.white:hover,
+.piano-key.white.active {
+    background: #00ff00;
+}
+
+.piano-key.black {
+    background: #333;
+    color: #fff;
+}
+
+.piano-key.black:hover,
+.piano-key.black.active {
+    background: #00ff00;
+}
+
+.timeline-grid {
+    flex: 1;
+    background: #1e1e1e;
+    border-radius: 4px;
+    position: relative;
+    overflow: auto;
+    display: grid;
+    grid-template-columns: repeat(64, 1fr);
+    gap: 1px;
+    padding: 5px;
+}
+
+.timeline-cell {
+    background: #2d2d2d;
+    border: 1px solid #444;
+    cursor: pointer;
+    transition: background 0.1s;
+}
+
+.timeline-cell:hover {
+    background: #3d3d3d;
+}
+
+.timeline-cell.active {
+    background: #238636;
+}
+
+.mixer {
+    width: 320px;
+    background: #2d2d2d;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.mixer-header {
+    background: #1e1e1e;
+    padding: 12px;
+    border-bottom: 1px solid #444;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mixer-header h3 {
+    margin: 0;
+    font-size: 14px;
+}
+
+.add-track-btn {
+    padding: 6px 12px;
+    background: #238636;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.add-track-btn:hover {
+    background: #2ea043;
+}
+
+.mixer-tracks {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.mixer-channel {
+    background: #1e1e1e;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #444;
+}
+
+.channel-name {
+    color: #fff;
+    font-size: 12px;
+    margin-bottom: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.channel-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.fader {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.fader label {
+    font-size: 11px;
+    color: #888;
+}
+
+.fader-slider {
+    width: 100%;
+    cursor: pointer;
+    height: 6px;
+}
+
+.delete-btn {
+    background: #da3633;
+    color: white;
+    border: none;
+    padding: 6px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    width: 100%;
+}
+
+.delete-btn:hover {
+    background: #f85149;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #2d2d2d;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

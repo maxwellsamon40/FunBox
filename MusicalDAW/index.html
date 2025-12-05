@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusicalDAW</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app">
+        <header class="app-header">
+            <h1>🎵 MusicalDAW</h1>
+            <div class="controls">
+                <div class="bpm-control">
+                    <input type="number" id="bpmInput" min="60" max="300" value="120">
+                    <span>BPM</span>
+                </div>
+                <button id="playBtn" class="play-btn">▶ Tocar</button>
+                <button id="stopBtn" class="stop-btn">⏹ Parar</button>
+            </div>
+        </header>
+
+        <main class="app-main">
+            <div class="piano-container">
+                <div class="piano-roll">
+                    <div class="piano-keys" id="pianoKeys"></div>
+                    <div class="timeline-grid" id="timelineGrid"></div>
+                </div>
+            </div>
+            <aside class="mixer">
+                <div class="mixer-header">
+                    <h3>Mixer</h3>
+                    <button id="addTrackBtn" class="add-track-btn">+ Track</button>
+                </div>
+                <div class="mixer-tracks" id="mixerTracks"></div>
+            </aside>
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
